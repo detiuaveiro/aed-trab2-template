@@ -5,6 +5,7 @@
 
 CC = gcc
 CFLAGS += -g -Wall -Wextra
+CPPFLAGS += -MMD
 
 TARGETS = example1 example2
 
@@ -16,26 +17,12 @@ example2: example2.o Graph.o GraphTopologicalSorting.o \
  IntegersQueue.o SortedList.o
 
 
-# Dependencies of source files (obtained with gcc -MM)
-
-example1.o: example1.c Graph.h
-
-example2.o: example2.c Graph.h GraphTopologicalSorting.h IntegersQueue.h
-
-Graph.o: Graph.c Graph.h SortedList.h
-
-GraphTopologicalSorting.o: GraphTopologicalSorting.c GraphTopologicalSorting.h \
- Graph.h IntegersQueue.h
-
-IntegersQueue.o: IntegersQueue.c IntegersQueue.h
-
-SortedList.o: SortedList.c SortedList.h
+# Include dependencies (generated with gcc -MMD)
+-include *.d
 
 
 # Cleanup
-
 clean:
-	rm -f *.o
+	rm -f *.o *.d
 	rm -f $(TARGETS)
-
 
