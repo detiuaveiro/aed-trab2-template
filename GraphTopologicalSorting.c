@@ -12,6 +12,7 @@
 
 #include "Graph.h"
 #include "IntegersQueue.h"
+#include "instrumentation.h"
 
 struct _GraphTopoSort {
   int* marked;                     // Aux array

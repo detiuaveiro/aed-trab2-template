@@ -13,6 +13,7 @@
 #include <stdlib.h>
 
 #include "SortedList.h"
+#include "instrumentation.h"
 
 struct _Vertex {
   unsigned int id;

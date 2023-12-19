@@ -9,6 +9,7 @@
 
 #include <assert.h>
 #include <stdlib.h>
+#include "instrumentation.h"
 
 struct _IntegersQueue {
   int max_size;  // maximum Queue size

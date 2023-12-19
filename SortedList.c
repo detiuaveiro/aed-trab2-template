@@ -14,6 +14,7 @@
 
 #include <assert.h>
 #include <stdlib.h>
+#include "instrumentation.h"
 
 struct _ListNode {
   void* item;
